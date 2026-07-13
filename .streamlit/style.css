@@ -1,0 +1,399 @@
+/* ============================================
+   WebGIS Bogor Selatan — Professional Theme
+   ============================================ */
+
+/* ---------- Global ---------- */
+.stApp {
+    font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- Hide Streamlit branding ---------- */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* ---------- Sidebar ---------- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 40%, #388e3c 100%) !important;
+    color: white !important;
+}
+section[data-testid="stSidebar"] .stMarkdown p,
+section[data-testid="stSidebar"] .stMarkdown li,
+section[data-testid="stSidebar"] .stMarkdown span,
+section[data-testid="stSidebar"] label {
+    color: rgba(255,255,255,0.9) !important;
+}
+section[data-testid="stSidebar"] .stRadio > div > label {
+    color: rgba(255,255,255,0.95) !important;
+}
+section[data-testid="stSidebar"] [data-testid="stSidebarNav"] a {
+    color: rgba(255,255,255,0.85) !important;
+    border-radius: 8px !important;
+    padding: 8px 14px !important;
+    margin: 2px 8px !important;
+    transition: all 0.2s ease !important;
+}
+section[data-testid="stSidebar"] [data-testid="stSidebarNav"] a:hover {
+    background: rgba(255,255,255,0.15) !important;
+    color: #ffffff !important;
+}
+section[data-testid="stSidebar"] [data-testid="stSidebarNav"] a[aria-selected="true"] {
+    background: rgba(255,255,255,0.25) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* ---------- Hero Banner ---------- */
+.hero-banner {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 30%, #43a047 60%, #66bb6a 100%);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    color: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(27, 94, 32, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.hero-banner h1 {
+    color: white !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.hero-banner p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* ---------- Metric Cards ---------- */
+.metric-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #e8ece8;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.metric-card .metric-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+.metric-card .metric-label {
+    font-size: 0.8rem;
+    color: #6b7b6b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+.metric-card .metric-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.2;
+}
+.metric-card .metric-delta {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+/* ---------- Feature Cards ---------- */
+.feature-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #e8ece8;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+.feature-card .feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+.feature-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.6rem;
+}
+.feature-card p {
+    color: #5a6a5a;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ---------- Info Banner ---------- */
+.info-banner {
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-left: 5px solid;
+}
+.info-banner.green {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-left-color: #2e7d32;
+    color: #1b5e20;
+}
+.info-banner.blue {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-left-color: #1565c0;
+    color: #0d47a1;
+}
+.info-banner.orange {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    border-left-color: #e65100;
+    color: #bf360c;
+}
+.info-banner.purple {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    border-left-color: #7b1fa2;
+    color: #4a148c;
+}
+.info-banner.red {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    border-left-color: #c62828;
+    color: #b71c1c;
+}
+
+/* ---------- Section Header ---------- */
+.section-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e8ece8;
+}
+.section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.3rem;
+}
+.section-header p {
+    color: #6b7b6b;
+    font-size: 0.95rem;
+}
+
+/* ---------- Professional Footer ---------- */
+.professional-footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: rgba(255,255,255,0.8);
+    border-radius: 14px;
+    padding: 2rem 2.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.professional-footer h4 {
+    color: #66bb6a;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.professional-footer p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+}
+.professional-footer .footer-divider {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 1rem 0;
+}
+
+/* ---------- Tab Styling ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 4px;
+    background: #f0f4f0;
+    border-radius: 10px;
+    padding: 4px;
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+.stTabs [aria-selected="true"] {
+    background: white !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    color: #1b5e20 !important;
+    font-weight: 600 !important;
+}
+
+/* ---------- Data Tables ---------- */
+.stDataFrame {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ---------- Containers ---------- */
+[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlockBorderWrapper"] {
+    border-radius: 12px !important;
+    border-color: #e0e8e0 !important;
+}
+
+/* ---------- Streamlit Metric Override ---------- */
+[data-testid="stMetric"] {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #e8ece8;
+}
+[data-testid="stMetric"]:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+[data-testid="stMetricLabel"] {
+    font-weight: 600 !important;
+    color: #5a6a5a !important;
+}
+[data-testid="stMetricValue"] {
+    font-weight: 700 !important;
+    color: #1a1a2e !important;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f0f4f0; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #b0bec5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #78909c; }
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* ---------- Hide app.py from sidebar ---------- */
+[data-testid="stSidebarNav"] li:first-child { display: none; }
+[data-testid="stSidebarNav"]::before {
+    content: "Menu Navigasi";
+    display: block;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 16px 4px;
+    font-weight: 600;
+}
+
+/* ---------- Raster Layer Control ---------- */
+.layer-control-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    border: 1px solid #e8ece8;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+.layer-control-card.active {
+    border-color: #2e7d32;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.12);
+}
+.layer-control-card .layer-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+}
+.layer-control-card .layer-group {
+    font-size: 0.75rem;
+    color: #8a9a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.25rem;
+}
+.layer-legend-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.layer-legend-row {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #4a5a4a;
+    padding: 2px 0;
+}
+
+/* ---------- Opacity Slider Label ---------- */
+.opacity-label {
+    font-size: 0.8rem;
+    color: #6b7b6b;
+    margin-bottom: 0.2rem;
+}
+
+/* ---------- Map Container ---------- */
+.map-container {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e0e8e0;
+}
+
+/* ---------- Layer Info Panel ---------- */
+.layer-info-panel {
+    background: #f8faf8;
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid #e0e8e0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+.layer-info-panel strong {
+    color: #1a1a2e;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .hero-banner { padding: 1.5rem; }
+    .hero-banner h1 { font-size: 1.6rem; }
+    .metric-card { padding: 1rem; }
+    .metric-card .metric-value { font-size: 1.3rem; }
+}
