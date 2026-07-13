@@ -531,23 +531,25 @@ def inject_global_css():
             }}
 
             /* Element Toolbar (Toolbar di atas dataframe, chart, map, dll.) */
-            div[data-testid="stElementToolbar"] {{
+            [data-testid="stElementToolbar"] {{
                 background-color: {t['surface']} !important;
                 border: 1px solid {t['border']} !important;
                 border-radius: 8px !important;
                 padding: 2px !important;
             }}
-            div[data-testid="stElementToolbar"] button {{
+            [data-testid="stElementToolbar"] * {{
                 background-color: transparent !important;
-                border: none !important;
+                color: {t['ink']} !important;
             }}
-            div[data-testid="stElementToolbar"] button:hover {{
+            [data-testid="stElementToolbar"] button:hover,
+            [data-testid="stElementToolbar"] button:hover * {{
                 background-color: {t['surface_alt']} !important;
+                color: {t['accent']} !important;
             }}
-            div[data-testid="stElementToolbar"] svg {{
+            [data-testid="stElementToolbar"] svg {{
                 fill: {t['ink']} !important;
             }}
-            div[data-testid="stElementToolbar"] button:hover svg {{
+            [data-testid="stElementToolbar"] button:hover svg {{
                 fill: {t['accent']} !important;
             }}
 
