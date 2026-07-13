@@ -48,7 +48,7 @@ def render():
                 height=420, margin=dict(l=10, r=10, t=20, b=10),
                 xaxis_title="Kelas 2021", yaxis_title="Kelas 2020",
             )
-            st.plotly_chart(style_plot(fig_heat), use_container_width=True)
+            st.plotly_chart(style_plot(fig_heat), use_container_width=True, theme=None)
 
             with st.expander("Lihat tabel mentah matriks perubahan", icon=":material/table_chart:", expanded=False):
                 st.dataframe(cm.style.background_gradient(cmap="Blues", axis=None), use_container_width=True)
@@ -117,7 +117,7 @@ def render():
                 height=420, margin=dict(l=10, r=10, t=20, b=10),
                 xaxis_title="Kelas Prediksi", yaxis_title="Kelas Aktual",
             )
-            st.plotly_chart(style_plot(fig_conf), use_container_width=True)
+            st.plotly_chart(style_plot(fig_conf), use_container_width=True, theme=None)
             st.caption("Nilai pada diagonal menunjukkan jumlah sampel yang diklasifikasikan dengan benar.")
         except Exception as e:
             st.error(f"Gagal memuat confusion matrix: {e}")
@@ -142,7 +142,7 @@ def render():
                 height=460,
             )
             fig_fi.update_layout(margin=dict(l=10, r=10, t=20, b=10), yaxis=dict(autorange="reversed"))
-            st.plotly_chart(style_plot(fig_fi), use_container_width=True)
+            st.plotly_chart(style_plot(fig_fi), use_container_width=True, theme=None)
 
             top3 = fi.head(3)["feature"].tolist()
             st.info(f"Tiga fitur paling berpengaruh dalam klasifikasi: **{', '.join(top3)}**.", icon=":material/lightbulb:")

@@ -171,7 +171,7 @@ def inject_global_css():
 
             /* Paksa warna teks di semua elemen konten agar tidak
                "tenggelam" oleh warna default Streamlit saat mode gelap */
-            .stApp, .stApp p, .stApp span, .stApp label, .stApp div,
+            .stApp, .stApp p, .stApp span, .stApp label,
             .stApp li, .stApp strong, .stApp em, .stApp small,
             .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6,
             [data-testid="stMarkdownContainer"],
@@ -181,8 +181,7 @@ def inject_global_css():
             [data-testid="stCaptionContainer"] *,
             [data-testid="stMetricLabel"],
             [data-testid="stMetricValue"],
-            [data-testid="stMetricDelta"],
-            [data-testid="stTable"], [data-testid="stTable"] * {{
+            [data-testid="stMetricDelta"] {{
                 color: {t['ink']} !important;
             }}
 
@@ -318,14 +317,20 @@ def inject_global_css():
                 font-weight: 800;
                 color: {t['ink']};
             }}
-            /* Tombol primary (mis. "Buka Peta Interaktif") harus tetap
-               berteks terang di atas latar warna aksen, jangan ikut
-               dipaksa warna tinta gelap oleh reset umum di atas. */
-            .stButton>button[kind="primary"],
+            /* Tombol primary (mis. "Buka Peta Interaktif") harus berlatar
+               aksen dan berteks kontras */
+            .stButton>button[kind="primary"] {{
+                background-color: {t['accent']} !important;
+                border: 1px solid {t['accent']} !important;
+            }}
             .stButton>button[kind="primary"] p,
             .stButton>button[kind="primary"] span,
             .stButton>button[kind="primary"] div {{
                 color: {t['accent_ink']} !important;
+            }}
+            .stButton>button[kind="primary"]:hover {{
+                background-color: {t['accent']} !important;
+                opacity: 0.9 !important;
             }}
             /* Tombol secondary (default) dan download di area utama agar latar belakangnya
                sesuai dengan tema permukaan dan warna teks kontras */

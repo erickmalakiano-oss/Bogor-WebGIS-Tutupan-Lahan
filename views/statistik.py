@@ -63,7 +63,7 @@ def render():
                 color_discrete_sequence=[theme["accent"], theme["ink"]], text_auto=".1f", height=380,
             )
             fig.update_layout(margin=dict(l=10, r=10, t=20, b=10), legend=dict(orientation="h", y=1.12))
-            st.plotly_chart(style_plot(fig), use_container_width=True)
+            st.plotly_chart(style_plot(fig), use_container_width=True, theme=None)
 
         st.markdown("##### Proporsi Tiap Kelas")
         pc1, pc2 = st.columns(2)
@@ -73,14 +73,14 @@ def render():
                 color_discrete_map=CLASS_COLORS, hole=0.45, title="Tahun 2020",
             )
             fig_pie20.update_traces(textinfo="percent+label")
-            st.plotly_chart(style_plot(fig_pie20), use_container_width=True)
+            st.plotly_chart(style_plot(fig_pie20), use_container_width=True, theme=None)
         with pc2:
             fig_pie21 = px.pie(
                 df.reset_index(), names="Kelas", values="2021", color="Kelas",
                 color_discrete_map=CLASS_COLORS, hole=0.45, title="Tahun 2021",
             )
             fig_pie21.update_traces(textinfo="percent+label")
-            st.plotly_chart(style_plot(fig_pie21), use_container_width=True)
+            st.plotly_chart(style_plot(fig_pie21), use_container_width=True, theme=None)
 
     # ---------- TAB 2 ----------
     with tab2:
@@ -96,7 +96,7 @@ def render():
             xaxis_title="Perubahan Luas (ha)", yaxis_title="",
         )
         fig_change.add_vline(x=0, line_color=theme["muted"], line_width=1)
-        st.plotly_chart(style_plot(fig_change), use_container_width=True)
+        st.plotly_chart(style_plot(fig_change), use_container_width=True, theme=None)
 
         st.markdown("##### Persentase Perubahan Relatif")
         df_pct = df.copy()
