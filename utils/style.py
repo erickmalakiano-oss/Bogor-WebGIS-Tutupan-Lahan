@@ -327,28 +327,34 @@ def inject_global_css():
             .stButton>button[kind="primary"] div {{
                 color: {t['accent_ink']} !important;
             }}
-            .stDownloadButton>button, .stDownloadButton>button * {{
-                color: {t['ink']} !important;
-            }}
-
-            /* Tombol secondary (default) di area utama agar latar belakangnya
+            /* Tombol secondary (default) dan download di area utama agar latar belakangnya
                sesuai dengan tema permukaan dan warna teks kontras */
-            .block-container .stButton>button:not([kind="primary"]) {{
+            .block-container .stButton>button:not([kind="primary"]),
+            .block-container .stDownloadButton>button {{
                 background-color: {t['surface']} !important;
                 border: 1px solid {t['border']} !important;
             }}
             .block-container .stButton>button:not([kind="primary"]) p,
             .block-container .stButton>button:not([kind="primary"]) span,
-            .block-container .stButton>button:not([kind="primary"]) div {{
+            .block-container .stButton>button:not([kind="primary"]) div,
+            .block-container .stDownloadButton>button p,
+            .block-container .stDownloadButton>button span,
+            .block-container .stDownloadButton>button div,
+            .block-container .stDownloadButton>button a {{
                 color: {t['ink']} !important;
             }}
-            .block-container .stButton>button:not([kind="primary"]):hover {{
+            .block-container .stButton>button:not([kind="primary"]):hover,
+            .block-container .stDownloadButton>button:hover {{
                 background-color: {t['surface_alt']} !important;
                 border-color: {t['accent']} !important;
             }}
             .block-container .stButton>button:not([kind="primary"]):hover p,
             .block-container .stButton>button:not([kind="primary"]):hover span,
-            .block-container .stButton>button:not([kind="primary"]):hover div {{
+            .block-container .stButton>button:not([kind="primary"]):hover div,
+            .block-container .stDownloadButton>button:hover p,
+            .block-container .stDownloadButton>button:hover span,
+            .block-container .stDownloadButton>button:hover div,
+            .block-container .stDownloadButton>button:hover a {{
                 color: {t['accent']} !important;
             }}
 
@@ -472,6 +478,51 @@ def inject_global_css():
             div[data-testid="stVerticalBlockBorderWrapper"] {{
                 border-color: {t['border']} !important;
                 background: {t['surface']};
+            }}
+
+            /* Input widgets (Selectbox, text input, number input, dll.) */
+            div[data-baseweb="select"] > div {{
+                background-color: {t['surface']} !important;
+                border: 1px solid {t['border']} !important;
+                color: {t['ink']} !important;
+            }}
+            div[data-baseweb="select"]:hover > div {{
+                border-color: {t['accent']} !important;
+            }}
+            div[data-baseweb="select"] svg {{
+                fill: {t['ink']} !important;
+            }}
+            
+            /* Dropdown popover menu styling */
+            div[data-baseweb="menu"], 
+            div[data-baseweb="menu"] ul, 
+            div[data-baseweb="menu"] li {{
+                background-color: {t['surface']} !important;
+                color: {t['ink']} !important;
+            }}
+            div[data-baseweb="menu"] li:hover,
+            div[data-baseweb="menu"] li[aria-selected="true"] {{
+                background-color: {t['accent_soft']} !important;
+                color: {t['accent']} !important;
+            }}
+
+            /* Input box (text, number, dll.) */
+            .stTextInput input, .stNumberInput input, .stTextArea textarea {{
+                background-color: {t['surface']} !important;
+                border: 1px solid {t['border']} !important;
+                color: {t['ink']} !important;
+                border-radius: 8px !important;
+            }}
+            .stTextInput input:focus, .stNumberInput input:focus, .stTextArea textarea:focus {{
+                border-color: {t['accent']} !important;
+                box-shadow: 0 0 0 1px {t['accent']} !important;
+            }}
+
+            /* Chip / Tag multiselect */
+            span[data-baseweb="tag"] {{
+                background-color: {t['accent_soft']} !important;
+                color: {t['accent']} !important;
+                border: 1px solid {t['border']} !important;
             }}
         </style>
         """,
