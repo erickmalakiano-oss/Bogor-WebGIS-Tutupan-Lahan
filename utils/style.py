@@ -529,6 +529,42 @@ def inject_global_css():
                 color: {t['accent']} !important;
                 border: 1px solid {t['border']} !important;
             }}
+
+            /* Element Toolbar (Toolbar di atas dataframe, chart, map, dll.) */
+            div[data-testid="stElementToolbar"] {{
+                background-color: {t['surface']} !important;
+                border: 1px solid {t['border']} !important;
+                border-radius: 8px !important;
+                padding: 2px !important;
+            }}
+            div[data-testid="stElementToolbar"] button {{
+                background-color: transparent !important;
+                border: none !important;
+            }}
+            div[data-testid="stElementToolbar"] button:hover {{
+                background-color: {t['surface_alt']} !important;
+            }}
+            div[data-testid="stElementToolbar"] svg {{
+                fill: {t['ink']} !important;
+            }}
+            div[data-testid="stElementToolbar"] button:hover svg {{
+                fill: {t['accent']} !important;
+            }}
+
+            /* Tooltip (Teks petunjuk "Fullscreen" dll.) */
+            div[data-baseweb="tooltip"],
+            div[role="tooltip"] {{
+                background-color: {t['surface']} !important;
+                color: {t['ink']} !important;
+                border: 1px solid {t['border']} !important;
+                border-radius: 6px !important;
+                box-shadow: {t['shadow']} !important;
+            }}
+            div[data-baseweb="tooltip"] *,
+            div[role="tooltip"] * {{
+                background-color: transparent !important;
+                color: {t['ink']} !important;
+            }}
         </style>
         """,
         unsafe_allow_html=True,
