@@ -331,6 +331,27 @@ def inject_global_css():
                 color: {t['ink']} !important;
             }}
 
+            /* Tombol secondary (default) di area utama agar latar belakangnya
+               sesuai dengan tema permukaan dan warna teks kontras */
+            .block-container .stButton>button:not([kind="primary"]) {{
+                background-color: {t['surface']} !important;
+                border: 1px solid {t['border']} !important;
+            }}
+            .block-container .stButton>button:not([kind="primary"]) p,
+            .block-container .stButton>button:not([kind="primary"]) span,
+            .block-container .stButton>button:not([kind="primary"]) div {{
+                color: {t['ink']} !important;
+            }}
+            .block-container .stButton>button:not([kind="primary"]):hover {{
+                background-color: {t['surface_alt']} !important;
+                border-color: {t['accent']} !important;
+            }}
+            .block-container .stButton>button:not([kind="primary"]):hover p,
+            .block-container .stButton>button:not([kind="primary"]):hover span,
+            .block-container .stButton>button:not([kind="primary"]):hover div {{
+                color: {t['accent']} !important;
+            }}
+
             .kpi-delta-up {{ color: {t['success']}; font-weight: 600; font-size: 0.8rem; }}
             .kpi-delta-down {{ color: {t['danger']}; font-weight: 600; font-size: 0.8rem; }}
 
